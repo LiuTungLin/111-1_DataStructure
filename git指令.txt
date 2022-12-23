@@ -4,4 +4,4 @@ git pull origin main
 上傳
 git add .
 git commit -m "message"
-git push -u origin main / git push origin HEAD:Liu
+git push origin HEAD:Liu //若有人改動要先pull才能push
