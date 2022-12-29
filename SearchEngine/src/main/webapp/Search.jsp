@@ -216,6 +216,52 @@
     background:#eee;
   }
 }
+
+.body{
+    background #f2f2f2;
+    font-family 'Open Sans', sans-serif;
+}
+    
+.search {
+    width 100%;
+    position relative;
+    display flex;
+}
+    
+.searchTerm {
+    width 100%;
+    border 3px solid #00B4CC;
+    border-right none;
+    padding 5px;
+    height 36px;
+    border-radius 5px 0 0 5px;
+    outline none;
+    color #9DBFAF;
+}
+
+.searchTermfocus{
+	color #00B4CC;
+}
+
+.searchButton {
+    width 40px;
+    height 36px;
+    border 1px solid #00B4CC;
+    background #00B4CC;
+    text-align center;
+    color #fff;
+    border-radius 0 5px 5px 0;
+    cursor pointer;
+    font-size 20px;
+}
+
+.wrap{
+    width 30%;
+    position absolute;
+    top 50%;
+    left 50%;
+    transform translate(-50%, -50%);
+}
 </style>
 <script type="text/javascript">
 function click10() {
@@ -259,6 +305,9 @@ style='font-size:120%;position:absolute;left:50%;top:48%;
 margin-top:-47px;margin-left:-400px;width:800px;height:45px' name='keyword' placeholder='搜尋與健康相關的內容'
 onfocus="placeholder= '' " onblur="placeholder='搜尋與健康相關的內容'" />
 </div>
+
+
+
 <div>
 <button type='button' class='button' name='button20' onclick='click10()' style='border-radius:10px;cursor:pointer;margin-left:-100px'>10</button>
 </div>
