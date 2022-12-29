@@ -306,8 +306,6 @@ margin-top:-47px;margin-left:-400px;width:800px;height:45px' name='keyword' plac
 onfocus="placeholder= '' " onblur="placeholder='搜尋與健康相關的內容'" />
 </div>
 
-
-
 <div>
 <button type='button' class='button' name='button20' onclick='click10()' style='border-radius:10px;cursor:pointer;margin-left:-100px'>10</button>
 </div>

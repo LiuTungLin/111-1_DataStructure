@@ -23,7 +23,6 @@ public class Web {
 		System.out.println("Please input (1)num of keywords (2)name and weight:");
 		Scanner scanner = new Scanner(System.in);
 		
-		Boolean bool = false;
 		while(scanner.hasNextLine()){
 			int numOfKeywords = scanner.nextInt();
 			ArrayList<Keyword> keywords = new ArrayList<Keyword>();
@@ -43,7 +42,6 @@ public class Web {
 				e.printStackTrace();
 			}
 			tree.eularPrintTree();
-			bool = true;
 		}
 		scanner.close();
 	}

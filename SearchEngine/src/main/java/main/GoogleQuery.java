@@ -6,9 +6,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.PriorityQueue;
+import java.util.Scanner;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -77,10 +78,29 @@ public class GoogleQuery
 					continue;
 				}
 				
-				System.out.println(title + ","+citeUrl);
+				WebPage rootPage = new WebPage(citeUrl.substring(7), title);		
+				WebTree tree = new WebTree(rootPage);
+				
+				ArrayList<Keyword> lst = new ArrayList<Keyword>();
+				lst.add(new Keyword("飲食", 10));
+				lst.add(new Keyword("肥胖", 10));
+				lst.add(new Keyword("營養", 10));
+				lst.add(new Keyword("熱量", 8));
+				lst.add(new Keyword("藥", 8));
+				lst.add(new Keyword("疾病", 6));
+				lst.add(new Keyword("運動", 6));
+				lst.add(new Keyword("三高", 4));
+				lst.add(new Keyword("免疫力", 4));
+				lst.add(new Keyword("病毒", 2));
+				
+//				tree.setPostOrderScore(lst);
+//				tree.eularPrintTree();
+				
+				
+				System.out.println("Title: " + title + "\nurl: " + citeUrl.substring(7) + "\n");
 				//put title and pair into HashMap
 				retVal.put(title, citeUrl);
-
+			
 			} catch (IndexOutOfBoundsException e) {
 //				e.printStackTrace();
 			}
