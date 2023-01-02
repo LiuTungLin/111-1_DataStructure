@@ -58,6 +58,16 @@ public class TestProject extends HttpServlet {
 			 s[i][0] = kLst.lst.get(i).name;
 			 s[i][1] = kLst.lst.get(i).url;
 		}
+		
+		//relative keyword
+		String[] r = new String[google.relative.size()];
+		request.setAttribute("relative", r);
+		int i = 0;
+		for(String entry : google.relative) {
+			r[i] = entry;
+			i++;
+		}
+				
 		request.getRequestDispatcher("googleitem.jsp").forward(request, response);
 		
 	}

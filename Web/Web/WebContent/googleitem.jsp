@@ -37,7 +37,17 @@ a:hover {
 			<hr size="2px" align="center" width="100%" color="black">
 			<br><br>
 			<%}%>
+			
+			相關搜尋:
+			<% 
+			String[] orderList2 = (String[]) request.getAttribute("relative");
+			for (int i = 0; i < orderList2.length; i++) {
+			String r = orderList2[i];
+			%>
+			<br><%=orderList2[i]%>
+			<%}%><br><br>
 		</div>
+		
 		<div>
 			<img src="images/running.png"
 				style='position: absolute; width: 150px; height: 150px; left: 50%; top: 50%; margin-top: -280px; margin-left: -590px'>

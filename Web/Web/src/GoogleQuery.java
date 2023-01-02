@@ -10,6 +10,7 @@ public class GoogleQuery {
 	public String url, content;
 	public static String citeUrl;
 	public static KeywordList keywordList;
+	public ArrayList<String> relative;
 
 	public GoogleQuery(String searchKeyword) throws UnsupportedEncodingException {
 		keywordList = new KeywordList();
@@ -47,6 +48,14 @@ public class GoogleQuery {
 		Document doc = Jsoup.parse(content);
 		Elements lis = doc.select("div");
 		lis = lis.select(".kCrYT");
+		
+		//relative keyword
+		Elements lis2 = doc.select("div");
+		lis2 = lis2.select("span").select(".lRVwie");
+		relative = new ArrayList<String>();
+		for(Element rel: lis2) {
+			relative.add(rel.text());
+		}
 		
 		for (Element li : lis) {
 			try {
@@ -149,7 +158,7 @@ public class GoogleQuery {
 				System.out.println(citeUrl);
 				System.out.println("-----------------------------");
 			} catch (Exception e) {
-				System.out.println("Skip: " + e.getMessage());
+//				System.out.println("Skip: " + e.getMessage());
 				continue;
 			}
 		}
