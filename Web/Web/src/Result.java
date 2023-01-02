@@ -1,8 +1,7 @@
 public class Result {
 	
-	public String name;
+	public String name, url;
 	public double nodeScore;
-	public String url;
 	
 	public Result(String name,double nodeScore,String url){
 		this.name = name;

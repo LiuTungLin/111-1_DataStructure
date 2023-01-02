@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.*;
-import java.util.Map.Entry;
 import java.net.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
@@ -8,18 +7,12 @@ import org.jsoup.select.*;
 
 public class GoogleQuery {
 	public String searchKeyword, title, results;
-	public String url;
-	public String content;
+	public String url, content;
 	public static String citeUrl;
 	public static KeywordList keywordList;
-	public PriorityQueue<WebNode> heap;
-//	public long startingTime;
 
 	public GoogleQuery(String searchKeyword) throws UnsupportedEncodingException {
-//		this.startingTime = System.currentTimeMillis();
 		keywordList = new KeywordList();
-//		String encodedKeyword = java.net.URLEncoder.encode(searchKeyword, "utf-8");
-//		this.searchKeyword = encodedKeyword;
 		this.searchKeyword = searchKeyword;
 		this.url = "http://www.google.com/search?q=" + searchKeyword + "&oe=utf8&num=50";
 	}
@@ -30,7 +23,7 @@ public class GoogleQuery {
 
 		URL u = new URL(url);
 		URLConnection conn = u.openConnection();
-		//set HTTP header
+		
 		conn.setRequestProperty("User-agent", "Chrome/7.0.517.44");
 		InputStream in = conn.getInputStream();
 
@@ -53,9 +46,7 @@ public class GoogleQuery {
 		HashMap<String, String> retVal = new HashMap<String, String>();
 		Document doc = Jsoup.parse(content);
 		Elements lis = doc.select("div");
-//		System.out.println(lis);
 		lis = lis.select(".kCrYT");
-//		System.out.println(lis.size());
 		
 		for (Element li : lis) {
 			try {

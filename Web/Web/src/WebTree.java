@@ -14,8 +14,6 @@ public class WebTree {
 	}
 
 	private void setPostOrderScore(WebNode startNode, ArrayList<Keyword> keywords) throws IOException {
-		// 2. compute the score of children nodes via post-order, then setNodeScore for
-		// startNode
 		for (WebNode child : startNode.children) {
 			setPostOrderScore(child, keywords);
 		}
@@ -37,7 +35,7 @@ public class WebTree {
 		
 		WebTree.result = new Result(startNode.webPage.name, startNode.nodeScore, GoogleQuery.citeUrl);
 		
-		// 3. print child via pre-order
+		//print child via pre-order
 		if (startNode.children != null) {
 			for (WebNode child : startNode.children) {
 				eularPrintTree(child);
@@ -48,7 +46,6 @@ public class WebTree {
 
 		if (startNode.isTheLastChild())
 			System.out.print("\n" + repeat("\t", nodeDepth - 2));
-
 	}
 
 	private String repeat(String str, int repeat) {
@@ -58,74 +55,5 @@ public class WebTree {
 		}
 		return retVal;
 	}
-
-//	public void setTreeOrder() {
-//		quickSort(0, root.children.size() - 1);
-//	}
-//
-//	private void swap(int aIndex, int bIndex) {
-//		WebNode temp = root.children.get(aIndex);
-//		root.children.set(aIndex, root.children.get(bIndex));
-//		root.children.set(bIndex, temp);
-//	}
-//
-//	private void quickSort(int leftbound, int rightbound) {
-//		if (leftbound >= rightbound) {
-//			return;
-//		}
-//		double pivot = root.children.get(rightbound).nodeScore;
-//		int swapIndex = leftbound;
-//		for (int x = leftbound; x < rightbound; x++) {
-//			if (root.children.get(x).nodeScore >= pivot) {
-//				swap(x, swapIndex);
-//				swapIndex++;
-//			}
-//		}
-//		swap(swapIndex, rightbound);
-//		quickSort(swapIndex + 1, rightbound);
-//		quickSort(leftbound, swapIndex - 1);
-//	}
-//
-//	@SuppressWarnings("unused")
-//	private void bubbleSort(int array[]) {
-//		int size = array.length;
-//		for (int i = 0; i < size - 1; i++)
-//			for (int j = 0; j < size - i - 1; j++)
-//				if (array[j] > array[j + 1]) {
-//					int temp = array[j];
-//					array[j] = array[j + 1];
-//					array[j + 1] = temp;
-//				}
-//	}
-//
-//	@SuppressWarnings("unused")
-//	private void selectionSort(int array[]) {
-//		int size = array.length;
-//		for (int step = 0; step < size - 1; step++) {
-//			int min_idx = step;
-//			for (int i = step + 1; i < size; i++) {
-//				if (array[i] < array[min_idx]) {
-//					min_idx = i;
-//				}
-//			}
-//			int temp = array[step];
-//			array[step] = array[min_idx];
-//			array[min_idx] = temp;
-//		}
-//	}
-//
-//	@SuppressWarnings("unused")
-//	private void insertionSort(int array[]) {
-//		int size = array.length;
-//		for (int step = 1; step < size; step++) {
-//			int key = array[step];
-//			int j = step - 1;
-//			while (j >= 0 && key < array[j]) {
-//				array[j + 1] = array[j];
-//				--j;
-//			}
-//			array[j + 1] = key;
-//		}
-//	}
 
 }

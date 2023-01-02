@@ -62,24 +62,6 @@ body {
 	width: 17%;
 }
 </style>
-<script type="text/javascript">
-	function click10() {
-		document.getElementsByName("searchNum")[0].value = 10;
-		document.getElementsByName("searchNum")[0].style.color = '#0489B1';
-	}
-	function click20() {
-		document.getElementsByName("searchNum")[0].value = 20;
-		document.getElementsByName("searchNum")[0].style.color = '#0489B1';
-	}
-	function click40() {
-		document.getElementsByName("searchNum")[0].value = 40;
-		document.getElementsByName("searchNum")[0].style.color = '#0489B1';
-	}
-	function click80() {
-		document.getElementsByName("searchNum")[0].value = 80;
-		document.getElementsByName("searchNum")[0].style.color = '#0489B1';
-	}
-</script>
 </head>
 
 <body style='background-color: #A1FFA1'>

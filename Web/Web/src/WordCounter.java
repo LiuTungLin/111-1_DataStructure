@@ -4,7 +4,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.net.URLDecoder;
 
 public class WordCounter {
 	private String urlStr;
@@ -32,7 +31,6 @@ public class WordCounter {
     }
     
     public int BoyerMoore(String T, String P){
-    	// Bonus: Implement Boyer-Moore Algorithm  
         int i = P.length() -1;
         int j = P.length() -1;
         while (i < T.length()) {
@@ -48,19 +46,16 @@ public class WordCounter {
 				i = i + P.length() - min(j, 1 + l);
 				j = P.length() - 1;
 			}
-			
 		} 
         return -1;
     }
 
     public int last(char c, String P){
-    	// Bonus: Implement last occurence function
     	for (int i = P.length() - 1; i >= 0; i--) {
     		if (c == P.charAt(i)) {
 				return i;
 			}
 		}
-    	
         return -1;
     }
 
@@ -86,15 +81,8 @@ public class WordCounter {
 		int contentlength = content.length();
 		int keylength = keyword.length();
 		int index = BoyerMoore(content, keyword);
-	/*	int index = content.indexOf(keyword);
-		while (index!= -1) {
-			retVal++;
-			content = content.substring(index + keylength , contentlength - 1);
-			contentlength = content.length();
-			index = content.indexOf(keyword);
-		}*/
-		
-		// 1. calculates appearances of keyword (Bonus: Implement Boyer-Moore Algorithm)
+	
+		//calculates appearances of keyword
 		while(index!=-1) {
 			retVal++;
 			content = content.substring(index + keylength, contentlength - 1);
@@ -102,7 +90,6 @@ public class WordCounter {
 			index = BoyerMoore(content, keyword);
 		}
 		
-	
 		return retVal;
     }
 }

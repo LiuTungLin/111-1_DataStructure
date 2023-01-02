@@ -1,41 +1,27 @@
 import java.io.*;
-import java.text.*;
 import java.util.*;
 
 public class WebNode {
 	public WebNode parent;
 	public ArrayList<WebNode> children;
 	public WebPage webPage;	
-	public double nodeScore;//This node's score += all its children's nodeScore
-	//
-	public String webType;
-	//
+	public double nodeScore;
 	
 	public WebNode(WebPage webPage){
 		this.webPage = webPage;
 		this.children = new ArrayList<WebNode>();
 	}
-	//
-	public void setWebType(String type) {
-		this.webType = type;
-	}
-	//
+	
 	public void setNodeScore(ArrayList<Keyword> keywords) throws IOException{
-		//this method should be called in post-order mode
-		  
-		//compute webPage score
 		webPage.setScore(keywords);
-		//set webPage score to nodeScore
 		nodeScore = webPage.score;
 		
-		//nodeScore += all children's nodeScore
 		for(WebNode child : children){
 			nodeScore += child.nodeScore;
 		}
 	}
 	
 	public void addChild(WebNode child){
-		//add the WebNode to its children list
 		this.children.add(child);
 		child.parent = this;
 	}

@@ -25,7 +25,6 @@ a:hover {
 }
 </style>
 </head>
-<body>
 <body style='background-color: #A1FFA1'>
 	<form action='${requestUri}' method='get'>
 		<div style='position: absolute; margin-top: 190px; margin-left: 50px'>
@@ -33,11 +32,10 @@ a:hover {
 			String[][] orderList = (String[][]) request.getAttribute("query");
 			for (int i = 0; i < orderList.length; i++) {
 				String s = orderList[i][1];
-				//s=s.substring(7);
 			%>
 			<a href='<%=s%>'><%=orderList[i][0]%> </a> <br>
 			<hr size="2px" align="center" width="100%" color="black">
-			<br> <br>
+			<br><br>
 			<%}%>
 		</div>
 		<div>

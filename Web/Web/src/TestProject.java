@@ -26,17 +26,11 @@ public class TestProject extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// TODO Auto-generated method stub
 		response.setCharacterEncoding("UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html");
 		
-//		int search = 50;
-//		if(request.getParameter("searchNum") != null) {
-//			search = Integer.parseInt(request.getParameter("searchNum"));
-//		}	
-		
-		// search.jsp
+		// frontend.jsp
 		if(request.getParameter("keyword")== null) { 
 			String requestUri = request.getRequestURI();
 			request.setAttribute("requestUri", requestUri);
