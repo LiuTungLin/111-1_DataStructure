@@ -103,7 +103,7 @@ public class GoogleQuery {
 			    lst.add(new Keyword("diet", 10));
 			    lst.add(new Keyword("fat", 10));
 			    lst.add(new Keyword("nutrition", 10));
-			    lst.add(new Keyword("heat", 8));
+			    lst.add(new Keyword("calories", 8));
 			    lst.add(new Keyword("medicine", 8));
 			    lst.add(new Keyword("disease", 6));
 			    lst.add(new Keyword("sport", 6));

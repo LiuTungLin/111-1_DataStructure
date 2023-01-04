@@ -52,6 +52,7 @@ public class TestProject extends HttpServlet {
 			num++;
 		}
 		
+		@SuppressWarnings("static-access")
 		KeywordList kLst = google.keywordList;
 		
 		for(int i = 0 ; i < kLst.lst.size() ; i++) {
